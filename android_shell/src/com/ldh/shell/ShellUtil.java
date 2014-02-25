@@ -1,7 +1,6 @@
 package com.ldh.shell;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -65,8 +64,7 @@ public class ShellUtil {
   class ResultThread extends Thread {
     public void run() {
       in = new BufferedReader(new InputStreamReader(proc.getInputStream()));
-      out =
-          new PrintWriter(new BufferedWriter(new OutputStreamWriter(proc.getOutputStream())), true);
+      out = new PrintWriter(new OutputStreamWriter(proc.getOutputStream()), true);
       String line;
       try {
         while ((line = in.readLine()) != null) {
